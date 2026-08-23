@@ -1,0 +1,154 @@
+============================================================
+  CRYPTO CARRY PHASE 1: KRAKEN DATA VALIDATION
+  Capital: $50,000  |  Date: 2026-08-23
+============================================================
+
+============================================================
+  BTC (PF_XBTUSD) — Kraken funding carry analysis
+============================================================
+
+  Period: 2025-08-20 to 2026-08-23 (369 days)
+  Hourly data points: 8829
+  Annualized gross carry: +3.56%
+  Days with positive funding: 73.7%
+  Worst negative-funding streak: 19 days
+
+  Kraken costs:
+    Entry+exit (round-trip): 30 bps = 0.30%
+    Annualized net carry: +3.26%
+    Net annual $ on $25,000 notional: $+815
+    Net annual $ on $50,000 capital: $+815
+
+  Cost screen: gross/cost = 11.9x PASS (need >= 3.0x)
+
+  Honesty check (monthly returns, bps):
+  n=13
+  mean=+27.65bp  median=+43.04bp  win=77%
+  drop-top-5%=+24.53bp
+  by-year positive 2/2
+
+  By-year annualized carry:
+    2025: +6.95%
+    2026: +1.62%
+
+  Binance comparison (same period):
+    Binance BTCUSDT annualized: +2.74%
+    Kraken PF_XBTUSD annualized:  +3.56%
+    Difference: +0.81% (Kraken higher)
+
+============================================================
+  ETH (PF_ETHUSD) — Kraken funding carry analysis
+============================================================
+
+  Period: 2025-08-20 to 2026-08-23 (369 days)
+  Hourly data points: 8829
+  Annualized gross carry: +3.17%
+  Days with positive funding: 74.0%
+  Worst negative-funding streak: 7 days
+
+  Kraken costs:
+    Entry+exit (round-trip): 30 bps = 0.30%
+    Annualized net carry: +2.87%
+    Net annual $ on $25,000 notional: $+717
+    Net annual $ on $50,000 capital: $+717
+
+  Cost screen: gross/cost = 10.6x PASS (need >= 3.0x)
+
+  Honesty check (monthly returns, bps):
+  n=13
+  mean=+24.63bp  median=+27.74bp  win=77%
+  drop-top-5%=+22.60bp
+  by-year positive 2/2
+
+  By-year annualized carry:
+    2025: +4.21%
+    2026: +2.58%
+
+  Binance comparison (same period):
+    Binance ETHUSDT annualized: +1.95%
+    Kraken PF_ETHUSD annualized:  +3.17%
+    Difference: +1.22% (Kraken higher)
+
+============================================================
+  SUMMARY
+============================================================
+  BTC: gross=+3.56% net=+3.26% $+815/yr  3x=True  tail=False  -> PASS
+  ETH: gross=+3.17% net=+2.87% $+717/yr  3x=True  tail=False  -> PASS
+
+  Phase 1 verdict: PROCEED to Phase 2
+============================================================
+  CARRY COMPRESSION MODEL
+============================================================
+
+============================================================
+  BTC
+============================================================
+
+  Binance annual carry (historical):
+    2020: +17.20%
+    2021: +30.63%
+    2022: +4.17%
+    2023: +7.87%
+    2024: +11.93%
+    2025: +5.13%
+    2026: +0.28% <-- below breakeven
+
+  Kraken annual carry (venue-specific):
+    2025: +6.95%
+    2026: +1.62%
+
+  Linear trend (Binance): slope = -3.357%/year
+  Carry declining by ~3.4% per year
+    2027 projected: -2.40%
+    2028 projected: -5.75%
+    2029 projected: -9.11%
+
+  Breakeven (0.30%) crossing: ~2026.2
+  Zero crossing: ~2026.3
+
+  Current-era rate: +1.62%
+  ** VIABLE — carry clears costs **
+
+============================================================
+  ETH
+============================================================
+
+  Binance annual carry (historical):
+    2020: +27.43%
+    2021: +37.56%
+    2022: +0.79%
+    2023: +8.27%
+    2024: +12.97%
+    2025: +4.93%
+    2026: -0.37% <-- below breakeven
+
+  Kraken annual carry (venue-specific):
+    2025: +4.21%
+    2026: +2.58%
+
+  Linear trend (Binance): slope = -4.874%/year
+  Carry declining by ~4.9% per year
+    2027 projected: -6.41%
+    2028 projected: -11.29%
+    2029 projected: -16.16%
+
+  Breakeven (0.30%) crossing: ~2025.6
+  Zero crossing: ~2025.7
+
+  Current-era rate: +2.58%
+  ** VIABLE — carry clears costs **
+
+============================================================
+  GO / NO-GO DECISION
+============================================================
+
+  KILL if:
+  - Current-era carry (2025-2026) is below breakeven (0.30%)
+  - Linear extrapolation shows < 1% by 2027
+  - Carry went negative in 2026
+
+  PROCEED if:
+  - Current-era carry > 1% on Kraken data
+  - 3x cost screen passes
+  - Trajectory suggests > 1 year of viable carry remaining
+  
